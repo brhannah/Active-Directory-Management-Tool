@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{046AC1CA-4257-464E-A4E8-633AB988E2BE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ActiveDirectoryManagementTool</RootNamespace>
+    <AssemblyName>ActiveDirectoryManagementTool</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <Win32Resource>
+    </Win32Resource>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>generic_computer.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Windows.Presentation" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Xceed.Wpf.DataGrid">
+      <HintPath>.\Xceed.Wpf.DataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>.\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Back-End\Dictionary-Management.cs" />
+    <Compile Include="Back-End\BackEnd.cs" />
+    <Compile Include="Back-End\BackEnd-TreeBuilder.cs" />
+    <Compile Include="Back-End\Filter\Filter-Edit.cs" />
+    <Compile Include="Back-End\Filter\Filter-FileAccess.cs" />
+    <Compile Include="Back-End\Filter\Filter-Management.cs" />
+    <Compile Include="Back-End\ObjectManagement\ObjectManagement-AssignJobTitles.cs" />
+    <Compile Include="Back-End\ObjectManagement\ObjectManagement-AssignGroupMemberships.cs" />
+    <Compile Include="Back-End\ObjectManagement\ObjectManagement-DeleteObjects.cs" />
+    <Compile Include="Back-End\ObjectManagement\ObjectManagement-AddObjects.cs" />
+    <Compile Include="Front-End\Dictionary\Dictionary-AssignJobTitle.cs" />
+    <Compile Include="Front-End\Filters\Filter-Editor.cs" />
+    <Compile Include="Front-End\Filters\Filter-Manager.cs" />
+    <Compile Include="Front-End\ObjectManagement\DeleteObjects\Delete-Object.cs" />
+    <Compile Include="Front-End\Dictionary\Dictionary-Manager.cs" />
+    <Compile Include="Items\Filters\Filter-Bool.cs" />
+    <Compile Include="Items\Filters\Filter-Integer.cs" />
+    <Compile Include="Items\Filters\Filter-DateTime.cs" />
+    <Compile Include="Items\Filters\Filter-String.cs" />
+    <Compile Include="Items\Filters\Filter.cs" />
+    <Compile Include="Items\Results\Result-AddComputer.cs" />
+    <Compile Include="Items\Results\Result-JoinGroup.cs" />
+    <Compile Include="Items\Results\Result-DeleteGeneric.cs" />
+    <Compile Include="Items\Results\Result-AddGroup.cs" />
+    <Compile Include="Items\Tree.cs" />
+    <Compile Include="Front-End\ObjectManagement\AddObjects\Add-Computer.cs" />
+    <Compile Include="Front-End\ObjectManagement\AddObjects\Add-Group.cs" />
+    <Compile Include="Front-End\ObjectManagement\AddObjects\Add-User.cs" />
+    <Compile Include="Front-End\ObjectManagement\AddObjects\Add-General.cs" />
+    <Compile Include="Front-End\FrontEnd-TreeBuilder.cs" />
+    <Compile Include="Front-End\FrontEnd.cs" />
+    <Compile Include="Front-End\GetInfo.cs" />
+    <Compile Include="Front-End\FrontEnd-MenuBar.cs" />
+    <Compile Include="Front-End\FrontEnd-RibbonBar.cs" />
+    <Compile Include="Front-End\ActiveDirectoryManagementTool.cs" />
+    <Compile Include="Front-End\Menus\RibbonBar\Menu-RibbonBar.cs" />
+    <Compile Include="Items\Results\Result-AddUser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Front-End\Menus\MenuBar\" />
+    <Folder Include="Resources\Icons\QuickAccessToolBar\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Resources\Icons\ApplicationMenu\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\UserTab\User-Add.png" />
+    <None Include="Resources\Icons\HomeTab\SelectAll.png" />
+    <None Include="Resources\Icons\ComputerTab\Computer-Add.png" />
+    <None Include="Resources\Icons\GroupTab\AssignJob.png" />
+    <None Include="Resources\Icons\ComputerTab\generic_computer.png" />
+    <Content Include="generic_computer.ico" />
+    <Content Include="Resources\Icons\GroupTab\dictionary.png" />
+    <None Include="Resources\Icons\GroupTab\Group-Add.png" />
+    <None Include="Resources\Icons\HomeTab\Filter.png" />
+    <None Include="Resources\Icons\HomeTab\Filter-Clear.png" />
+    <None Include="Resources\Icons\HomeTab\Generic-Add.png" />
+    <None Include="Resources\Icons\HomeTab\Generic-Delete.png" />
+    <Content Include="Resources\Icons\HomeTab\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
